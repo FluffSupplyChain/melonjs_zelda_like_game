@@ -12,7 +12,6 @@ const atlases = new Map<string, TextureAtlas>();
 export function createTextureAtlases(): void {
   for (const key of [ASSET_KEYS.PLAYER]) {
     const image = loader.getImage(key);
-    console.log("what we get from loader.getImage(key) : ", image);
     if (image === null) {
       throw new Error(`Image "${key}" not loaded; add it to the resources list`);
     }
