@@ -1,3 +1,5 @@
+import type { PhysicsBody } from "melonjs";
+
 /**
  * Utility function to ensure we handle the full possible range of types when checking a variable for a possible
  * type in a union.
@@ -9,4 +11,12 @@ export function exhaustiveGuard(_value: never): never {
   throw new Error(
     `Error! Reached forbidden guard function with unexpected value: ${JSON.stringify(_value)}`,
   );
+}
+
+/**
+ * A renderable only gets its physics body (built from its `bodyDef`) once it is
+ * added to the world, so `renderable.body` can still be `undefined` before that.
+ */
+export function isPhysicsBody(body: PhysicsBody | undefined | null): body is PhysicsBody {
+  return body !== undefined && body !== null;
 }
