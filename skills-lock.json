@@ -1,0 +1,213 @@
+{
+  "version": 2,
+  "skills": {
+    "melonjs": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs/SKILL.md",
+      "computedHash": "1f57ca77cd66bc8c4648835f057a97e61a7064fbcf7dc59d07b82c7908941f52"
+    },
+    "melonjs-20-migration": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-20-migration/SKILL.md",
+      "computedHash": "156917d4a5b5505d9b19eb0a78c19aa8a5d656a4a37a330d95d91eb373b84782"
+    },
+    "melonjs-3d": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-3d/SKILL.md",
+      "computedHash": "14f904696ac538c0010b20a9683e5d34136f77245c5b82b1edbe87cd00f3008a"
+    },
+    "melonjs-3d-assets": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-3d-assets/SKILL.md",
+      "computedHash": "b076851c9b08ab783279bd2d9c332b87dcc3b384283b9909757222dbf24a0d01"
+    },
+    "melonjs-audio": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-audio/SKILL.md",
+      "computedHash": "609e57981601e51ac0f0e49295f298c89bae3bd3227c00d44178367173b488ac"
+    },
+    "melonjs-camera-and-drawing": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-camera-and-drawing/SKILL.md",
+      "computedHash": "0fc32d5b682579e0365a96018cb79dfce1d502bc7f32667f8fc7adb5cbc99ea8"
+    },
+    "melonjs-deployment": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-deployment/SKILL.md",
+      "computedHash": "077eba80329c4fa5c451abee670fbab796f66d5719aeb1979f277619b71673f4"
+    },
+    "melonjs-display-and-scaling": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-display-and-scaling/SKILL.md",
+      "computedHash": "422bedb58667beef125b367e6069d5e3914f23d49d94ce9f046f70e44da50abc"
+    },
+    "melonjs-effects-and-shaders": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-effects-and-shaders/SKILL.md",
+      "computedHash": "8c14f9a5c1d1c0d6873d1e4837ddc686e4cb90c28e1adc74e30df847f7a98456"
+    },
+    "melonjs-events": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-events/SKILL.md",
+      "computedHash": "495b023ef84ed66427e9114a2a16b1682cad079e3b2875bff542f4d74b15f176"
+    },
+    "melonjs-getting-started": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-getting-started/SKILL.md",
+      "computedHash": "b11518d4bde21aba99f86645ba00856b7e47e113db8405b317a58150c73a0c8d"
+    },
+    "melonjs-input": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-input/SKILL.md",
+      "computedHash": "78b1b3e4eb7e723a69112251f54836c30338889f201ce98f56a3509896406431"
+    },
+    "melonjs-lighting": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-lighting/SKILL.md",
+      "computedHash": "20888b1e55e3d65f55892547a30f14044d0b51c2c89dfbbce5f8979b74eb4ce9"
+    },
+    "melonjs-loading-assets": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-loading-assets/SKILL.md",
+      "computedHash": "1d716ad9d782b98f569c2a49e38a49ae2d791c1ac3cff5d102ee9f499ed71faf"
+    },
+    "melonjs-math": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-math/SKILL.md",
+      "computedHash": "dc2ddb36e0d3dbe6d4c742d96177af3cfedc236c9b9dc5abec11139008f1eda6"
+    },
+    "melonjs-particles-and-trails": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-particles-and-trails/SKILL.md",
+      "computedHash": "d00efefa308a023ac151926987b189f2882532719af7607d8f3d1c0e7346884c"
+    },
+    "melonjs-performance": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-performance/SKILL.md",
+      "computedHash": "72f916c6e2639b0c73af435a9f0309d35b6fa7b2ef3d2699860eef2b65fcf556"
+    },
+    "melonjs-physics": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-physics/SKILL.md",
+      "computedHash": "10bae24d717daf4cbd772bc34f23efa9ac2c12d1bbfdf4f3396d7af0ff1103ec"
+    },
+    "melonjs-platforms": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-platforms/SKILL.md",
+      "computedHash": "afd09facb150c8e60ee1ac38065750f5bbd06c93e31be1b778ff09eda11be7f1"
+    },
+    "melonjs-plugins": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-plugins/SKILL.md",
+      "computedHash": "9ee97ab8e7a9840cff771754895f377b2a925cfbdc0c90837669ba051f05a9cc"
+    },
+    "melonjs-renderables": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-renderables/SKILL.md",
+      "computedHash": "4922dc9299e55d2dcabb0ae8f230e48f060c2cd3fd8e3079557371d77d067b7b"
+    },
+    "melonjs-renderer-backends": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-renderer-backends/SKILL.md",
+      "computedHash": "7697524dc3b3ea741fa1086fc3d31b90a543acaf74309aa42334e254e7de8d51"
+    },
+    "melonjs-scenes-and-state": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-scenes-and-state/SKILL.md",
+      "computedHash": "c505c04b05d981c5401167f22309fe9daf3616e7d062233310b137e93d22d654"
+    },
+    "melonjs-sprites-and-animation": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-sprites-and-animation/SKILL.md",
+      "computedHash": "692c7bad4bb65d06d33247f3217712e78a98b396e64856f66f533ff513d9b528"
+    },
+    "melonjs-tilemaps": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-tilemaps/SKILL.md",
+      "computedHash": "3829b9c15bf171d060fc7d461f3168242908c786171c1293dadd2ba4cf43d659"
+    },
+    "melonjs-ui-and-text": {
+      "source": "melonjs/melonJS",
+      "ref": "master",
+      "commit": "c82868f6297457fb2ac3e22cde210895c21fb4c8",
+      "sourceType": "github",
+      "skillPath": "packages/melonjs/skills/melonjs-ui-and-text/SKILL.md",
+      "computedHash": "a9af286ea8c0ca97c5f914bbada6760c7db15cc8ed8a6e6414e14fa7ea6e904c"
+    }
+  }
+}
