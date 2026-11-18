@@ -7,7 +7,7 @@ const atlases = new Map<string, TextureAtlas>();
  * Build the texture atlases once, right after preloading, and share them between
  * scenes. Aseprite JSON exports carry their animation tags (`meta.frameTags`):
  * `atlas.getAnimationSettings()` turns each tag into a named animation, with
- * each frame's own duration — the melonJS side of Phaser's `createFromAseprite`.
+ * each frame's own duration.
  */
 export function createTextureAtlases(): void {
   for (const key of [ASSET_KEYS.PLAYER]) {

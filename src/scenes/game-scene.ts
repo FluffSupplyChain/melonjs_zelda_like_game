@@ -5,7 +5,7 @@ import { Player } from "../game-objects/player/player";
 export class GameScene extends Stage {
   #player!: Player;
 
-  // runs every time the scene is entered (Phaser's create())
+  // runs every time the scene is entered
   override onResetEvent(app: Application): void {
     const center = { x: app.viewport.width / 2, y: app.viewport.height / 2 };
 

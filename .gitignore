@@ -31,5 +31,5 @@ dist-ssr
 .env.*
 !.env.example
 
-# ignore porting fromp haser
+# local reference code
 phaser

@@ -50,7 +50,7 @@ const atlas = (name: string, path: string, file: string): Asset[] => [
 const image = (name: string, src: string): Asset => ({ name, type: "image", src });
 
 /**
- * melonJS equivalent of the Phaser asset pack (public/assets/data/assets.json).
+ * Every asset the game preloads.
  * A flat list for now; it can be split into `{ common, world, dungeon_1 }`
  * bundles later to load and free a level's assets on their own.
  */
