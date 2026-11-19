@@ -10,6 +10,11 @@ import { MoveState } from "../../components/state-machine/states/character/move-
 import { SpeedComponent } from "../../components/game-object/speed-component";
 import { PLAYER_SPEED } from "../../common/config";
 import { DirectionComponent } from "../../components/game-object/direction-component";
+import {
+  AnimationComponent,
+  type AnimationConfig,
+} from "../../components/game-object/animation-component";
+import { PLAYER_ANIMATION_KEYS } from "../../common/assets";
 
 export type PlayerConfig = {
   position: Position;
@@ -21,6 +26,7 @@ export class Player extends Sprite {
   #controlsComponent: ControlsComponent;
   #speedComponent: SpeedComponent;
   #directionComponent: DirectionComponent;
+  #animationComponent: AnimationComponent;
   #stateMachine: StateMachine;
 
   constructor(config: PlayerConfig) {
@@ -36,10 +42,24 @@ export class Player extends Sprite {
       collisionType: collision.types.PLAYER_OBJECT,
     };
 
+    // create animation config for component
+    // (left and right share the side animations; the sprite is mirrored for left)
+    const animationConfig: AnimationConfig = {
+      WALK_DOWN: { key: PLAYER_ANIMATION_KEYS.WALK_DOWN, repeat: -1, ignoreIfPlaying: true },
+      WALK_UP: { key: PLAYER_ANIMATION_KEYS.WALK_UP, repeat: -1, ignoreIfPlaying: true },
+      WALK_LEFT: { key: PLAYER_ANIMATION_KEYS.WALK_SIDE, repeat: -1, ignoreIfPlaying: true },
+      WALK_RIGHT: { key: PLAYER_ANIMATION_KEYS.WALK_SIDE, repeat: -1, ignoreIfPlaying: true },
+      IDLE_DOWN: { key: PLAYER_ANIMATION_KEYS.IDLE_DOWN, repeat: -1, ignoreIfPlaying: true },
+      IDLE_UP: { key: PLAYER_ANIMATION_KEYS.IDLE_UP, repeat: -1, ignoreIfPlaying: true },
+      IDLE_LEFT: { key: PLAYER_ANIMATION_KEYS.IDLE_SIDE, repeat: -1, ignoreIfPlaying: true },
+      IDLE_RIGHT: { key: PLAYER_ANIMATION_KEYS.IDLE_SIDE, repeat: -1, ignoreIfPlaying: true },
+    };
+
     // add components
     this.#controlsComponent = new ControlsComponent(this, config.controls);
     this.#speedComponent = new SpeedComponent(this, PLAYER_SPEED);
     this.#directionComponent = new DirectionComponent(this);
+    this.#animationComponent = new AnimationComponent(this, animationConfig);
 
     // add state machine
     this.#stateMachine = new StateMachine("player");
@@ -63,6 +83,10 @@ export class Player extends Sprite {
 
   set direction(value: Direction) {
     this.#directionComponent.direction = value;
+  }
+
+  get animationComponent(): AnimationComponent {
+    return this.#animationComponent;
   }
 
   // called by the world every frame while the player is in it

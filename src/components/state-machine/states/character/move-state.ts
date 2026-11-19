@@ -1,5 +1,4 @@
 import { Vector2d } from "melonjs";
-import { PLAYER_ANIMATION_KEYS } from "../../../../common/assets";
 import { BaseCharacterState } from "./base-character-state";
 import { CHARACTER_STATES } from "./character-states";
 import type { Player } from "../../../../game-objects/player/player";
@@ -29,15 +28,11 @@ export class MoveState extends BaseCharacterState {
       return;
     }
 
-    // selecting the animation already playing is a no-op, so this never restarts it
-
     // vertical movement
     if (controls.isUpDown) {
-      this._gameObject.setCurrentAnimation(PLAYER_ANIMATION_KEYS.WALK_UP);
       this.#updateVelocity(false, -1);
       this.#updateDirection(DIRECTION.UP);
     } else if (controls.isDownDown) {
-      this._gameObject.setCurrentAnimation(PLAYER_ANIMATION_KEYS.WALK_DOWN);
       this.#updateVelocity(false, 1);
       this.#updateDirection(DIRECTION.DOWN);
     } else {
@@ -49,16 +44,14 @@ export class MoveState extends BaseCharacterState {
     if (controls.isLeftDown) {
       this.#flip(true);
       this.#updateVelocity(true, -1);
-      this.#updateDirection(DIRECTION.LEFT);
       if (!isMovingVertically) {
-        this._gameObject.setCurrentAnimation(PLAYER_ANIMATION_KEYS.WALK_SIDE);
+        this.#updateDirection(DIRECTION.LEFT);
       }
     } else if (controls.isRightDown) {
       this.#flip(false);
       this.#updateVelocity(true, 1);
-      this.#updateDirection(DIRECTION.RIGHT);
       if (!isMovingVertically) {
-        this._gameObject.setCurrentAnimation(PLAYER_ANIMATION_KEYS.WALK_SIDE);
+        this.#updateDirection(DIRECTION.RIGHT);
       }
     } else {
       this.#updateVelocity(true, 0);
@@ -92,5 +85,6 @@ export class MoveState extends BaseCharacterState {
 
   #updateDirection(direction: Direction): void {
     this._gameObject.direction = direction;
+    this._gameObject.animationComponent.playAnimation(`WALK_${this._gameObject.direction}`);
   }
 }
