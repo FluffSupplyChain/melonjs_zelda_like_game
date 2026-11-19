@@ -2,6 +2,7 @@ import { type Application, Stage, Text } from "melonjs";
 import { ASSET_KEYS } from "../common/assets";
 import { Player } from "../game-objects/player/player";
 import { KeyboardComponent } from "../components/input/keyboard-component";
+import { Spider } from "../game-objects/enemies/spider";
 
 export class GameScene extends Stage {
   #controls!: KeyboardComponent;
@@ -26,10 +27,16 @@ export class GameScene extends Stage {
 
     this.#player = new Player({
       position: center,
-      assetKey: ASSET_KEYS.PLAYER,
       controls: this.#controls,
     });
     // adding it to the world also creates its physics body
     app.world.addChild(this.#player, 2);
+
+    app.world.addChild(
+      new Spider({
+        position: { x: center.x, y: center.y + 50 },
+      }),
+      2,
+    );
   }
 }

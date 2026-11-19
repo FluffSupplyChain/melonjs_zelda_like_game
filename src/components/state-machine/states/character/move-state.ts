@@ -1,7 +1,7 @@
 import { Vector2d } from "melonjs";
 import { BaseCharacterState } from "./base-character-state";
 import { CHARACTER_STATES } from "./character-states";
-import type { Player } from "../../../../game-objects/player/player";
+import type { CharacterGameObject } from "../../../../game-objects/common/character-game-object";
 import { isPhysicsBody } from "../../../../common/utils";
 import type { Direction } from "../../../../common/types";
 import { DIRECTION } from "../../../../common/common";
@@ -10,7 +10,7 @@ export class MoveState extends BaseCharacterState {
   // direction requested by the controls this frame, scaled to the speed before reaching the body
   #velocity = new Vector2d(0, 0);
 
-  constructor(gameObject: Player) {
+  constructor(gameObject: CharacterGameObject) {
     super(CHARACTER_STATES.MOVE_STATE, gameObject);
   }
 

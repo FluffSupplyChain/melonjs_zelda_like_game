@@ -10,7 +10,7 @@ const atlases = new Map<string, TextureAtlas>();
  * each frame's own duration.
  */
 export function createTextureAtlases(): void {
-  for (const key of [ASSET_KEYS.PLAYER]) {
+  for (const key of [ASSET_KEYS.PLAYER, ASSET_KEYS.SPIDER]) {
     const image = loader.getImage(key);
     if (image === null) {
       throw new Error(`Image "${key}" not loaded; add it to the resources list`);
