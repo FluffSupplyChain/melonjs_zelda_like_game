@@ -4,9 +4,8 @@ import { BaseCharacterState } from "./base-character-state";
 import { CHARACTER_STATES } from "./character-states";
 import type { Player } from "../../../../game-objects/player/player";
 import { isPhysicsBody } from "../../../../common/utils";
-
-// 80 pixels per second; the built-in physics counts velocity in pixels per step (60 steps a second)
-const SPEED = 80 / 60;
+import type { Direction } from "../../../../common/types";
+import { DIRECTION } from "../../../../common/common";
 
 export class MoveState extends BaseCharacterState {
   // direction requested by the controls this frame, scaled to the speed before reaching the body
@@ -36,9 +35,11 @@ export class MoveState extends BaseCharacterState {
     if (controls.isUpDown) {
       this._gameObject.setCurrentAnimation(PLAYER_ANIMATION_KEYS.WALK_UP);
       this.#updateVelocity(false, -1);
+      this.#updateDirection(DIRECTION.UP);
     } else if (controls.isDownDown) {
       this._gameObject.setCurrentAnimation(PLAYER_ANIMATION_KEYS.WALK_DOWN);
       this.#updateVelocity(false, 1);
+      this.#updateDirection(DIRECTION.DOWN);
     } else {
       this.#updateVelocity(false, 0);
     }
@@ -48,12 +49,14 @@ export class MoveState extends BaseCharacterState {
     if (controls.isLeftDown) {
       this.#flip(true);
       this.#updateVelocity(true, -1);
+      this.#updateDirection(DIRECTION.LEFT);
       if (!isMovingVertically) {
         this._gameObject.setCurrentAnimation(PLAYER_ANIMATION_KEYS.WALK_SIDE);
       }
     } else if (controls.isRightDown) {
       this.#flip(false);
       this.#updateVelocity(true, 1);
+      this.#updateDirection(DIRECTION.RIGHT);
       if (!isMovingVertically) {
         this._gameObject.setCurrentAnimation(PLAYER_ANIMATION_KEYS.WALK_SIDE);
       }
@@ -70,7 +73,8 @@ export class MoveState extends BaseCharacterState {
     if (!isPhysicsBody(this._gameObject.body)) {
       return;
     }
-    this.#velocity.normalize().scale(SPEED);
+    // the speed is in pixels per second; the built-in physics counts velocity in pixels per step (60 steps a second)
+    this.#velocity.normalize().scale(this._gameObject.speed / 60);
     this._gameObject.body.setVelocity(this.#velocity.x, this.#velocity.y);
   }
 
@@ -84,5 +88,9 @@ export class MoveState extends BaseCharacterState {
       return;
     }
     this.#velocity.y = value;
+  }
+
+  #updateDirection(direction: Direction): void {
+    this._gameObject.direction = direction;
   }
 }

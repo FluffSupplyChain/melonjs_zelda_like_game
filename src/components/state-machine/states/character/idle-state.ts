@@ -12,6 +12,7 @@ export class IdleState extends BaseCharacterState {
   public onEnter(): void {
     // play idle animation based on game object direction
     // TODO: update based on direction
+    console.log(this._gameObject.direction);
     // (loops forever; selecting the animation already playing is a no-op)
     this._gameObject.setCurrentAnimation(PLAYER_ANIMATION_KEYS.IDLE_DOWN);
 
