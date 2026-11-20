@@ -1,5 +1,6 @@
 import { collision, Rect, Sprite } from "melonjs";
 import type { Direction, Position } from "../../common/types";
+import { isPhysicsBody } from "../../common/utils";
 import { getTextureAtlas } from "../../common/textures";
 import type { InputComponent } from "../../components/input/input-component";
 import { ControlsComponent } from "../../components/game-object/controls-component";
@@ -29,6 +30,8 @@ export abstract class CharacterGameObject extends Sprite {
   protected _animationComponent: AnimationComponent;
   protected _stateMachine: StateMachine;
   protected _isPlayer: boolean;
+  // keep the character inside the viewport (no built-in equivalent in melonJS)
+  #collideWorldBounds = false;
 
   constructor(config: CharacterConfig) {
     const { position, assetKey, speed, animationConfig, inputComponent, id, isPlayer } = config;
@@ -85,11 +88,45 @@ export abstract class CharacterGameObject extends Sprite {
     return this._animationComponent;
   }
 
-  // called by the world every frame while the character is in it
+  public setCollideWorldBounds(value: boolean): this {
+    this.#collideWorldBounds = value;
+    return this;
+  }
+
+  // called by the world every frame while the character is in it, right after the physics step
   override update(dt: number): boolean {
     this._stateMachine.update();
 
+    if (this.#collideWorldBounds) {
+      this.#keepInsideWorldBounds();
+    }
+
     // advances the animation; returns true when the sprite needs redrawing
     return super.update(dt);
+  }
+
+  // pushes the (unrotated) sprite frame back inside the viewport and stops the velocity
+  // on the blocked axis, like an arcade body hitting the world bounds
+  #keepInsideWorldBounds(): void {
+    const { width: worldWidth, height: worldHeight } = this.parentApp.viewport;
+    const minX = this.width * this.anchorPoint.x;
+    const maxX = worldWidth - this.width * (1 - this.anchorPoint.x);
+    const minY = this.height * this.anchorPoint.y;
+    const maxY = worldHeight - this.height * (1 - this.anchorPoint.y);
+
+    const x = Math.min(Math.max(this.pos.x, minX), maxX);
+    const y = Math.min(Math.max(this.pos.y, minY), maxY);
+    const isBlockedX = x !== this.pos.x;
+    const isBlockedY = y !== this.pos.y;
+    if (!isBlockedX && !isBlockedY) {
+      return;
+    }
+
+    this.pos.x = x;
+    this.pos.y = y;
+    if (isPhysicsBody(this.body)) {
+      const velocity = this.body.getVelocity();
+      this.body.setVelocity(isBlockedX ? 0 : velocity.x, isBlockedY ? 0 : velocity.y);
+    }
   }
 }

@@ -7,6 +7,7 @@ import { Spider } from "../game-objects/enemies/spider";
 export class GameScene extends Stage {
   #controls!: KeyboardComponent;
   #player!: Player;
+  #spider!: Spider;
 
   // runs every time the scene is entered
   override onResetEvent(app: Application): void {
@@ -32,11 +33,11 @@ export class GameScene extends Stage {
     // adding it to the world also creates its physics body
     app.world.addChild(this.#player, 2);
 
-    app.world.addChild(
-      new Spider({
-        position: { x: center.x, y: center.y + 50 },
-      }),
-      2,
-    );
+    // the world updates the spider every frame, so no update() call is needed here
+    this.#spider = new Spider({
+      position: { x: center.x, y: center.y + 50 },
+    });
+    this.#spider.setCollideWorldBounds(true);
+    app.world.addChild(this.#spider, 2);
   }
 }
